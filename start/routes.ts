@@ -21,8 +21,10 @@ router.get('/', async () => {
 router.post('/auth/register', [AuthController, 'register'])
 router.post('/auth/login', [AuthController, 'login'])
 router.get('/cities', [CitiesController, 'index'])
-router.post('/cities', [CitiesController, 'create'])
 
+
+/* router.get('/pico-y-placa/{date}', [] )
+ */
 router
   .group(() => {
     router.get('/me', async ({ auth }) => {
@@ -37,3 +39,10 @@ router
       guards: ['api'],
     })
   )
+
+//routes admin
+router
+  .group(() => {
+    router.post('/cities', [CitiesController, 'create'])
+  })
+  .prefix('admin')

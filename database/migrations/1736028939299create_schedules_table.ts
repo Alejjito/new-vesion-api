@@ -7,11 +7,11 @@ export default class extends BaseSchema {
     this.schema.createTable(this.tableName, (table) => {
       table.increments('id')
       table.string('name', 255).notNullable()
-      table.bigInteger('pico_and_placa_id').unsigned().notNullable()
+      table.bigInteger('peak_and_plate_id').unsigned().notNullable()
       table
-        .foreign('pico_and_placa_id')
+        .foreign('peak_and_plate_id')
         .references('id')
-        .inTable('pico_and_placas')
+        .inTable('peak_and_plates')
         .onDelete('CASCADE')
       table.timestamp('created_at')
       table.timestamp('updated_at')

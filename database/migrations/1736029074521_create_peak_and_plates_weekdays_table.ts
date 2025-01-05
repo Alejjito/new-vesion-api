@@ -9,12 +9,12 @@ export default class extends BaseSchema {
       table.string('digits')
       table.boolean('apply').defaultTo(false)
       table.bigInteger('weekday_id').unsigned().notNullable()
-      table.bigInteger('pico_and_placa_id').unsigned().notNullable()
+      table.bigInteger('peak_and_plate_id').unsigned().notNullable()
       table.foreign('weekday_id').references('id').inTable('weekdays').onDelete('CASCADE')
       table
-        .foreign('pico_and_placa_id')
+        .foreign('peak_and_plate_id')
         .references('id')
-        .inTable('pico_and_placas')
+        .inTable('peak_and_plates')
         .onDelete('CASCADE'),
       table.timestamp('created_at')
       table.timestamp('updated_at')

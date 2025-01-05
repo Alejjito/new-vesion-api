@@ -4,8 +4,4 @@ export default class UsersController {
   async index({ response }: HttpContext) {
     response.send('Hello from UsersController')
   }
-
-  async create({ response }: HttpContext) {
-    response.send('Hello from UsersController')
-  }
 }
